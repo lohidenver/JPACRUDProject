@@ -33,7 +33,7 @@ public class NesDAOImpl implements NesDAO {
 
 	@Override
 	public Nes findByKeyword() {
-		// TODO Auto-generated method stub
+		String jpql = "";
 		return null;
 	}
 

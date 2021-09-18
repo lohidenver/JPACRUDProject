@@ -9,7 +9,7 @@ public interface NesDAO {
 	Nes findById(int nesId);
 	List<Nes> findAll();
 	
-	Nes findByKeyword();
+	Nes findByKeyword(String uI);
 	
 	public Nes create(Nes nes);
 	public Nes update(int id, Nes nes);
