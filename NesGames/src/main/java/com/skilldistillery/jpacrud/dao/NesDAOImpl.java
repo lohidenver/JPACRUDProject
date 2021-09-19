@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jpacrud.entities.Nes;
@@ -17,6 +18,7 @@ import com.skilldistillery.jpacrud.entities.Nes;
 @Transactional
 public class NesDAOImpl implements NesDAO {
 
+	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPANES");
 	
 	@PersistenceContext
 	private EntityManager em;
@@ -34,7 +36,6 @@ public class NesDAOImpl implements NesDAO {
 	}
 
 
-private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPANES");
 	
 	@Override
 	public Nes create(Nes nes) {
@@ -54,26 +55,18 @@ private static EntityManagerFactory emf = Persistence.createEntityManagerFactory
 
 	@Override
 	public Nes update(int id, Nes nes) {
-			    EntityManager em = emf.createEntityManager();
-
+			
 			    Nes dbNes = em.find(Nes.class, id);
 			    
-			    em.getTransaction().begin();
-
 			    dbNes.setName(nes.getName());
 			    dbNes.setYear(nes.getYear());
 			    dbNes.setPublisher(nes.getPublisher());
 			    dbNes.setStyle(nes.getStyle());
-			    //dbNes.getNumber_players(nes.getNumber_players());
-			  //  dbNes.getEbay(nes.getEbay());
-			  //  dbNes.getWikipedia(nes.getWikipedia());
+			    dbNes.setNumberPlayers(nes.getNumberPlayers());
+			    dbNes.setWikipedia(nes.getWikipedia());
+			    em.flush();
 			    
-			    
-			    
-
-			    em.getTransaction().commit();
-			    em.close();
-		return dbNes;
+			    return dbNes;
 	}
 
 	@Override
@@ -83,22 +76,20 @@ private static EntityManagerFactory emf = Persistence.createEntityManagerFactory
 		Nes nes = em.find(Nes.class, id);
 		
 		if(nes != null) {
-			em.getTransaction().begin();
-			
+					
 			em.remove(nes); // performs the delete on the managed entity
 			successfullyRemovedNes = !em.contains(nes);
 			
-			em.getTransaction().commit();
-			
-		}
-		em.close();
+			}
+
 		return successfullyRemovedNes;
 	}
 
 	@Override
-	public Nes findByKeyword(String uI) {
-		// TODO Auto-generated method stub
-		return null;
+	public Nes findByKeyword(String keyword) {
+		String query = "SELECT g FROM Name g WHERE g.name LIKE %:name%";
+	//	List<Nes> searchByTitleLike(@Param("name") String name);
+		return null ;
 	}
 
 

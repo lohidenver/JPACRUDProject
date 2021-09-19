@@ -1,11 +1,11 @@
 package com.skilldistillery.jpacrud.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.jpacrud.dao.NesDAO;
 import com.skilldistillery.jpacrud.entities.Nes;
@@ -15,26 +15,100 @@ public class NesController {
 
 	@Autowired
 	private NesDAO nesdao;
-	
+
+	@RequestMapping(path = { "/", "home.do" })
+	public String home(Model model) {
+		model.addAttribute("games", nesdao.findAll());
+		return "home";
+	}
+
 	@RequestMapping(path = "getGame.do")
 	public String showFilm(Integer gid, Model model) {
 		Nes nes = nesdao.findById(gid);
 		model.addAttribute("game", nes);
 		return "game/show";
 	}
-	@RequestMapping(path = {"/",  "home.do"})
-	public String home(Model model) {
-		model.addAttribute("games", nesdao.findAll());
-		return "home";
+
+	@RequestMapping(path = "create.do", method = RequestMethod.GET)
+	public String editGame(Model model) {
+		String viewName = "Add game to Database";
+
+		return viewName;
 	}
-	
-	//@RequestMapping(path = {""})
-	public String index(Model model) {
-		List<Nes> nes = nesdao.findAll();
-		model.addAttribute("games", nes);
-		return "home";
+
+	@RequestMapping(path = "create.do", method = RequestMethod.POST)
+	public String addGame(@RequestParam("name") String name, @RequestParam("year") Integer year,
+			@RequestParam("publisher") String publisher, @RequestParam("style") String style,
+			@RequestParam("numberPlayers") String numberPlayers, @RequestParam("wikipedia") String wikipedia, Model model) {
+
+		String success = "game/success";
+		String fail = "game/fail";
+
+		Nes game = new Nes();
+		game.setName(name);
+		game.setYear(year);
+		game.setPublisher(publisher);
+		game.setStyle(style);
+		game.setNumberPlayers(numberPlayers);
+		game.setWikipedia(wikipedia);
+
+		Nes dbNes = nesdao.create(game);
+		model.addAttribute("game", game);
+		if (dbNes.getId() > 0) {
+			return success;
+		} else {
+			return fail;
+		}
 	}
-	
-	
-	
-}//End Class
+
+	@RequestMapping(path = "remove.do")
+	public String destroyGame(int gid, Model model) {
+		boolean result = nesdao.destroy(gid);
+
+		if (result == true) {
+			return "game/success";
+		} else {
+			return "game/fail";
+		}
+
+	}
+
+	@RequestMapping(path = "update.do", method = RequestMethod.GET)
+	public String editPatient(@RequestParam int gid, Model model) {
+		String viewName = "Update Game";
+		Nes nes = nesdao.findById(gid);
+		model.addAttribute("game", nes);
+		model.addAttribute("Game id", gid);
+		return viewName;
+	}
+
+	@RequestMapping(path = "update.do", method = RequestMethod.POST, params = "nes")
+	public String editForm(Nes nes, @RequestParam("gid") int gid, Model model) {
+
+		String viewName = "home";
+		nesdao.update(gid, nes);
+
+		return viewName;
+	}
+
+	@RequestMapping(path = "destroy.do")
+	public String destroy(int gid, Model model) {
+		boolean result = nesdao.destroy(gid);
+
+		if (result == true) {
+			return "game/success";
+		} else {
+			return "game/fail";
+		}
+
+	}
+
+//	
+//	//@RequestMapping(path = {""})
+//	public String index(Model model) {
+//		List<Nes> nes = nesdao.findAll();
+//		model.addAttribute("games", nes);
+//		return "home";
+//	}
+
+}// End Class

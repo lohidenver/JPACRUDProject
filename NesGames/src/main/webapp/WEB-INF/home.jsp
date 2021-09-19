@@ -20,7 +20,7 @@
 		<form action="getGame.do" method="GET">
 			Game ID: <input type="text" name="gid" /> <input type="submit"
 				value="Show Game" />
-		</form>
+		</form>   ADD GAME    DELETE GAME
 
 		<Table class="table" thead-dark table-striped table-hover>
 
@@ -38,8 +38,8 @@
 					<td><a href="getGame.do?gid=${g.id}"> ${g.name} </a></td>
 				</tr>
 				</tbody>
-
 			</c:forEach>
+
 		</Table>
 	</div>
 	<jsp:include page="bootstrapFoot.jsp"></jsp:include>
