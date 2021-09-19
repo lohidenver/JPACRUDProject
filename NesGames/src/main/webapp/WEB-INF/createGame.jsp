@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ADD</title>
+<title>Create Game Form</title>
 </head>
 <body>
 
 
-CREATE PlaceHolder
+CREATE GAME FORM
+
+
 </body>
 </html>

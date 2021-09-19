@@ -18,9 +18,26 @@
 	</h1>
 	<div class="container-fluid">
 		<form action="getGame.do" method="GET">
-			Game ID: <input type="text" name="gid" /> <input type="submit"
+			Game ID: <input type="text" name="gid" /> <input 
+			
+			style="width:150px;" type="submit"
 				value="Show Game" />
-		</form>   ADD GAME    DELETE GAME
+		</form>   
+		
+		<hr>
+		<!-- put new button: Add Student  -->
+		<input 	type="button" value="Add Game"
+				onclick="create.do"
+				class="" style= "width:150px"
+		
+		/>
+	
+		
+		
+			<button style="width:150px; background-color:red; border-color:black; color:white" >Delete ${game.name}</button>
+	
+		<hr>
+		
 
 		<Table class="table" thead-dark table-striped table-hover>
 

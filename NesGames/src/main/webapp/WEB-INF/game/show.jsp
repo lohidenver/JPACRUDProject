@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,14 +23,13 @@
 		<hr>
 		<br> <br>
 
-
+<!--Update  -->
 
 		<!-- Change this out!!!! -->
-		<a href="${game.wikipedia}">
-			<button>Edit ${game.name}</button>
-		</a> <br> 
-		<br>
-		<a href="${game.wikipedia}">
+		
+		
+		<hr>
+		<a href="">
 			<button style="background-color:red; border-color:black; color:white" >Delete ${game.name}</button>
 		</a>
 

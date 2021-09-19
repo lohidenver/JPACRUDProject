@@ -22,6 +22,7 @@ public class NesDAOImpl implements NesDAO {
 	
 	@PersistenceContext
 	private EntityManager em;
+	
 	@Override
 	public Nes findById(int id) {
 		// TODO Auto-generated method stub
@@ -41,15 +42,9 @@ public class NesDAOImpl implements NesDAO {
 	public Nes create(Nes nes) {
 		EntityManager em = emf.createEntityManager();
 		
-		em.getTransaction().begin();
-		System.out.println("Before persist, nes: " + nes);
 		em.persist(nes);
 		em.flush();
-		System.out.println("After persist, nes: " + nes);
-		em.getTransaction().commit();
 		
-		
-		em.close();
 		return nes;
 	}
 

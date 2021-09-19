@@ -27,6 +27,19 @@ public class Nes {
 		super();
 	}
 
+	
+
+	public Nes(String name, Integer year, String publisher, String style, String numberPlayers, String wikipedia) {
+		super();
+		this.name = name;
+		this.year = year;
+		this.publisher = publisher;
+		this.style = style;
+		this.numberPlayers = numberPlayers;
+		this.wikipedia = wikipedia;
+	}
+
+
 
 	//	this.ebay = ebay;
 	public Nes(int id, String name, Integer year, String publisher, String style, String numberPlayers,
