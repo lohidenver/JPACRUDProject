@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UPDATE</title>
+<title>Nintendo</title>
 </head>
 <body>
+<div>
+  <h5>${nes.name} (${nes.year})</h5>
+  <p>${nes.wikipedia}</p>
+</div>
 
 </body>
 </html>

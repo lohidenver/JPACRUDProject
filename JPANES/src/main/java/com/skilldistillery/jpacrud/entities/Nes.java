@@ -22,7 +22,7 @@ public class Nes {
 	@Column(name = "number_players")
 	private Integer numberPlayers;
 	private String wikipedia;
-	private String ebay;
+	//private String ebay;
 	
 	
 	//TODO: new properties from table
@@ -42,7 +42,7 @@ public class Nes {
 		this.style = style;
 		this.numberPlayers = number_players;
 		this.wikipedia = wikipedia;
-		this.ebay = ebay;
+	//	this.ebay = ebay;
 	}
 
 	public Integer getYear() {
@@ -85,13 +85,13 @@ public class Nes {
 		this.wikipedia = wikipedia;
 	}
 
-	public String getEbay() {
-		return ebay;
-	}
-
-	public void setEbay(String ebay) {
-		this.ebay = ebay;
-	}
+//	//public String getEbay() {
+//		return ebay;
+//	}
+//
+//	public void setEbay(String ebay) {
+//		this.ebay = ebay;
+//	}
 
 	public Nes(int id, String name) {
 		super();
@@ -118,7 +118,7 @@ public class Nes {
 	@Override
 	public String toString() {
 		return "Nes [id=" + id + ", name=" + name + ", year=" + year + ", publisher=" + publisher + ", style=" + style
-				+ ", number_players=" + numberPlayers + ", wikipedia=" + wikipedia + ", ebay=" + ebay + "]";
+				+ ", number_players=" + numberPlayers + ", wikipedia=" + wikipedia + "]";
 	}
 	
 	

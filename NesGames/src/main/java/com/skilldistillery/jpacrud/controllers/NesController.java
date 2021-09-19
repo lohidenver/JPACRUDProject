@@ -16,6 +16,12 @@ public class NesController {
 	@Autowired
 	private NesDAO nesdao;
 	
+	@RequestMapping(path = "getGame.do")
+	public String showFilm(Integer gid, Model model) {
+		Nes nes = nesdao.findById(gid);
+		model.addAttribute("game", nes);
+		return "game/show";
+	}
 	@RequestMapping(path = {"/",  "home.do"})
 	public String home(Model model) {
 		model.addAttribute("games", nesdao.findAll());
@@ -28,5 +34,7 @@ public class NesController {
 		model.addAttribute("games", nes);
 		return "home";
 	}
+	
+	
 	
 }//End Class

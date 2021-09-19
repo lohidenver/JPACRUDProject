@@ -46,7 +46,7 @@ class NESTest {
 	@Test
 	void test() {
 		assertNotNull(nes);
-		assertEquals("3D Battles of WorldRunner", nes.getName());
+		assertEquals("The Legend of Zelda", nes.getName());
 	}
 
 }

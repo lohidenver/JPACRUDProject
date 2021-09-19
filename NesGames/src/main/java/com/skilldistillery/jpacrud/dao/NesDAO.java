@@ -6,7 +6,7 @@ import com.skilldistillery.jpacrud.entities.Nes;
 
 public interface NesDAO {
 
-	Nes findById(int nesId);
+	Nes findById(int id);
 	List<Nes> findAll();
 	
 	Nes findByKeyword(String uI);
