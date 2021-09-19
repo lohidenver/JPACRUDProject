@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 <!DOCTYPE html>
@@ -13,35 +13,34 @@
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-<h1><center>Welcome to your NES Database</center></h1>
-<div class="container-fluid">
-	<form action="getGame.do" method="GET">
-		Game ID: <input type="text" name="gid" /> 
-		<input type="submit"value="Show Game" />
-	</form>
-	
-	<Table class="table" thead-dark table-striped table-hover>
-	
-	<thead>
-	
-	<tr>
-	
-	<th>Id</th>
-	<th>Title</th>
-	
-	</tr>
-	
-	<tbody>
-	</thead>
-	
-<c:forEach var="g" items="${games}">
-<td>${g.id}</td>
-<td><a href="getGame.do?gid=${g.id}"> ${g.name} </a></td>
+	<h1>
+		<center>Welcome to your NES Database</center>
+	</h1>
+	<div class="container-fluid">
+		<form action="getGame.do" method="GET">
+			Game ID: <input type="text" name="gid" /> <input type="submit"
+				value="Show Game" />
+		</form>
 
-</tbody>
+		<Table class="table" thead-dark table-striped table-hover>
 
-</c:forEach>
-	</Table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Title</th>
+				</tr>
+			<tbody>
+			</thead>
+
+			<c:forEach var="g" items="${games}">
+				<tr>
+					<td>${g.id}</td>
+					<td><a href="getGame.do?gid=${g.id}"> ${g.name} </a></td>
+				</tr>
+				</tbody>
+
+			</c:forEach>
+		</Table>
 	</div>
 	<jsp:include page="bootstrapFoot.jsp"></jsp:include>
 </body>

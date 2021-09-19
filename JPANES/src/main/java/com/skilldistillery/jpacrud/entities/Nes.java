@@ -20,30 +20,38 @@ public class Nes {
 	private String publisher;
 	private String style;
 	@Column(name = "number_players")
-	private Integer numberPlayers;
+	private String numberPlayers;
 	private String wikipedia;
-	//private String ebay;
-	
-	
-	//TODO: new properties from table
-	//dont forget getters setters tostring
 
 	public Nes() {
 		super();
 	}
 
-	public Nes(int id, String name, Integer year, String publisher, String style, Integer number_players,
-			String wikipedia, String ebay) {
+
+	//	this.ebay = ebay;
+	public Nes(int id, String name, Integer year, String publisher, String style, String numberPlayers,
+			String wikipedia) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.year = year;
 		this.publisher = publisher;
 		this.style = style;
-		this.numberPlayers = number_players;
+		this.numberPlayers = numberPlayers;
 		this.wikipedia = wikipedia;
-	//	this.ebay = ebay;
 	}
+
+
+
+	public String getNumberPlayers() {
+		return numberPlayers;
+	}
+
+
+	public void setNumberPlayers(String numberPlayers) {
+		this.numberPlayers = numberPlayers;
+	}
+
 
 	public Integer getYear() {
 		return year;
@@ -69,13 +77,7 @@ public class Nes {
 		this.style = style;
 	}
 
-	public Integer getNumber_players() {
-		return numberPlayers;
-	}
 
-	public void setNumber_players(Integer number_players) {
-		this.numberPlayers = number_players;
-	}
 
 	public String getWikipedia() {
 		return wikipedia;
@@ -84,14 +86,6 @@ public class Nes {
 	public void setWikipedia(String wikipedia) {
 		this.wikipedia = wikipedia;
 	}
-
-//	//public String getEbay() {
-//		return ebay;
-//	}
-//
-//	public void setEbay(String ebay) {
-//		this.ebay = ebay;
-//	}
 
 	public Nes(int id, String name) {
 		super();
@@ -118,7 +112,7 @@ public class Nes {
 	@Override
 	public String toString() {
 		return "Nes [id=" + id + ", name=" + name + ", year=" + year + ", publisher=" + publisher + ", style=" + style
-				+ ", number_players=" + numberPlayers + ", wikipedia=" + wikipedia + "]";
+				+ ", numberPlayers=" + numberPlayers + ", wikipedia=" + wikipedia + "]";
 	}
 	
 	
