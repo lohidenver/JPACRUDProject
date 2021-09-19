@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,26 +7,33 @@
 <title>Nintendo</title>
 </head>
 <body>
-<div>
-  <h1>${game.name}  </h1>
-  <h4>Year released: ${game.year} </h4>
-  <h4>Publisher: ${game.publisher} </h4>
-  <h4>Style of Game: ${game.style} </h4>
-  <h4>Single or Multiplayer: ${game.numberPlayers} </h4>
+	<div>
+		<h1>${game.name}</h1>
+		<h4>Year released: ${game.year}</h4>
+		<h4>Publisher: ${game.publisher}</h4>
+		<h4>Style of Game: ${game.style}</h4>
+		<h4>Single or Multiplayer: ${game.numberPlayers}</h4>
 
-  
-  
-  <hr>
- 
- 
- <a href="${game.wikipedia}">
-  <button>${game.name} on Wikipedia</button>
-</a>
-  
+		<a href="${game.wikipedia}">
+			<button>${game.name} on Wikipedia</button>
+		</a><br>
 
-  
-  
-</div>
+		<hr>
+		<br> <br>
+
+
+
+		<!-- Change this out!!!! -->
+		<a href="${game.wikipedia}">
+			<button>Edit ${game.name}</button>
+		</a> <br> 
+		<br>
+		<a href="${game.wikipedia}">
+			<button style="background-color:red; border-color:black; color:white" >Delete ${game.name}</button>
+		</a>
+
+
+	</div>
 
 </body>
 </html>
