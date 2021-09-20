@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Create Game Form</title>
+<title>Update Game</title>
 </head>
 <body>
 
 
-CREATE GAME FORM
-
+Update Form
 
 </body>
 </html>

@@ -18,23 +18,39 @@
 
 		<a href="${game.wikipedia}">
 			<button>${game.name} on Wikipedia</button>
-		</a><br>
+		</a>//working
 
-		<hr>
-		<br> <br>
-
+	<c:url var="updateLink" value="/updateGame">
+				<c:param name="gameId" value="${g.id }"/>
+				</c:url>
+				
+				<c:url var="deleteLink" value="/destroy">
+				<c:param name="gameId" value="${g.id }"/>
+				</c:url>
+		
+		
 <!--Update  -->
+<input class="" style="width: 150px" type="button" name="gameId" value="Update Game" 
+			onclick="window.location.href='updateGame'; return false;" 
+			 /> //not working
 
 		<!-- Change this out!!!! -->
 		
 		
 		<hr>
-		<a href="">
+		<a href="/destroy">
 			<button style="background-color:red; border-color:black; color:white" >Delete ${game.name}</button>
-		</a>
+		</a> //not working
 
 
 	</div>
 
+<div style="clear; both;"></div>
+
+<p>
+<a href="home.do">Home</a>
+
+</p>
+</div>
 </body>
 </html>

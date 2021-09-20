@@ -21,11 +21,19 @@ import com.skilldistillery.jpacrud.entities.Nes;
 @Transactional
 public class NesDAOImpl implements NesDAO {
 	
+//	@Autowired
+//	private SessionFactory sessionFactory;
 	
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPANES");
 	
 	@PersistenceContext
 	private EntityManager em;
+	
+
+	public Session getSession() {
+	  Session session = em.unwrap(Session.class);
+	    return session;
+	  }
 	
 	@Override
 	public Nes findById(int id) {
@@ -110,6 +118,52 @@ public class NesDAOImpl implements NesDAO {
 		
 	}
 
+	@Override
+	public Nes getGame(int id) {
+		em.persist(id);
+		em.flush();
+		
+		Nes nes = em.find(Nes.class, id);
+		return nes;
+		
+	
+	}
+
+
+	
+
+	@Override
+	public boolean deleteGame(int id) {
+		boolean result = false;
+		Nes nes = em.find(Nes.class, id);
+		em.remove(nes);
+		
+		nes = em.find(Nes.class, id);
+		result = !em.contains(nes);
+		return result;
+		
+	}
+
+
+
+
+
+//	@Override
+//	public SellerListings updateListing(int id, SellerListings listing) {
+//		SellerListings dbListing = em.find(SellerListings.class, id);
+//		
+//		dbListing.setName(listing.getName());
+//		dbListing.setType(listing.getType());
+//		dbListing.setCondition(listing.getCondition());
+//		dbListing.setConditionDescription(listing.getConditionDescription());
+//		dbListing.setCardNumber(listing.getCardNumber());
+//		dbListing.setSeries(listing.getSeries());
+//		dbListing.setImageUrl(listing.getImageUrl());
+//		dbListing.setRarity(listing.getRarity());
+//		
+//		return dbListing;
+//		
+//	}
 
 
 

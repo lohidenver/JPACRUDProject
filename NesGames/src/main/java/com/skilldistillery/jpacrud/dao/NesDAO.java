@@ -12,9 +12,11 @@ public interface NesDAO {
 	
 	public Nes create(Nes nes);
 	public Nes update(int id, Nes nes);
-	public boolean destroy(int id);
 	public Nes saveGame(Nes nes);
+	public Nes getGame(int id);
+	public boolean deleteGame(int id);
 	
+	public boolean destroy(int id);
 	
 	
 }

@@ -32,6 +32,21 @@ public class NesServiceImpl implements NesService {
 		nesdao.saveGame(nes);
 	}
 	
+	@Override
+	@Transactional
+	public Nes getGame(int id) {
+		
+		return nesdao.getGame(id);
+	}
+	
+	@Override
+	@Transactional
+	public void deleteGame(int id) {
+		
+		nesdao.deleteGame(id);
+	}
+
+	
 	
 
 }

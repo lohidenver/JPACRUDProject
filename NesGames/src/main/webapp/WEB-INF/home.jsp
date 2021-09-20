@@ -22,7 +22,7 @@
 	</div>
 
 
-	<div class="container-fluid">
+	<div class="container">
 
 		<div id="content">
 			<form action="getGame.do" method="GET">
@@ -34,12 +34,14 @@
 			<input class="" style="width: 150px" type="button" value="Add Game" 
 			onclick="window.location.href='createGame'; return false;"
 			 />
+			
+			<!--  <input class="" style="width: 150px" type="button" value="Update Game" 
+			onclick="window.location.href='updateForm'; return false;"
+			 />
+			  -->
 
 
-
-			<button
-				style="width: 150px; background-color: red; border-color: black; color: white">Delete
-				${game.name}</button>
+			
 
 			<hr>
 
@@ -50,12 +52,30 @@
 				<tr>
 					<th>Id</th>
 					<th>Title</th>
+					<th>Action</th>
 				</tr>
 
 				<c:forEach var="g" items="${games}">
+				
+				
+				
+				<c:url var="updateLink" value="updateGame">
+				<c:param name="gameId" value="${g.id }"/>
+				</c:url>
+				
+				<c:url var="deleteLink" value="delete">
+				<c:param name="gameId" value="${g.id }"/>
+				</c:url>
+				
 					<tr>
 						<td>${g.id}</td>
 						<td><a href="getGame.do?gid=${g.id}"> ${g.name} </a></td>
+						<td>
+						<a href="${updateLink }"><button>Update</button></a>
+						
+						<a href="${deleteLink }" onclick=
+							"if (!(confirm('Are you sure you want to delete this game? '))) return false"><button style="background-color:red; border-color:black; color:white" >Delete</button></a>
+						</td>
 					</tr>
 
 				</c:forEach>

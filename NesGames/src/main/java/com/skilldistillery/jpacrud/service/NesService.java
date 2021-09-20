@@ -10,6 +10,10 @@ public interface NesService {
 
 	public Nes findById(Integer gid);
 
-	public void saveGame(Nes nes); 
+	public void saveGame(Nes nes);
+
+	public Nes getGame(int id);
+
+	public void deleteGame(int id); 
 	
 }
