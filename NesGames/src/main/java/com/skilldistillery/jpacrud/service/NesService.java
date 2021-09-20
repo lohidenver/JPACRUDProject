@@ -6,5 +6,7 @@ import com.skilldistillery.jpacrud.entities.Nes;
 
 public interface NesService {
 
-	public List<Nes> findAll(); 
+	public List<Nes> findAll();
+
+	public Nes findById(Integer gid); 
 }
