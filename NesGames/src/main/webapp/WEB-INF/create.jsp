@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>NES Database - Add a Game</title>
+<title>NES Database - Add/Update a Game</title>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header"style="background-color:powderblue;" >
-			<h1>Add a game to the database!</h1>
+			<h1>Add/Update a game to the database!</h1>
 		</div>
 <div id="container-fluid">
 <h3>Game Details</h3>
@@ -62,10 +62,14 @@
 	</table>
 
 </form:form>
+
+<form:form action="updateGame" modelAttribute="game" method = "POST">
+<form:hidden path="id" /><input type="submit" value="Update Game"/>
+</form:form>
 <div style="clear; both;"></div>
 
 <p>
-<a href="home.do">Home</a>
+<a href="home.do"><button>Home</button></a>
 
 </p>
 </div>

@@ -112,7 +112,8 @@ public class NesDAOImpl implements NesDAO {
 
 	@Override
 	public Nes saveGame(Nes nes) {
-		em.persist(nes);
+		//em.persist(nes);
+		em.merge(nes);
 		em.flush();
 		
 		System.out.println(nes);

@@ -5,7 +5,10 @@ JPACRUDProject - NES
 Description
 A Java based program that creates a database for Nintendo Games. The user can add and delete games, however, I didnt get the update games to work.
 
-The adding of the game works as well as the delete.
+The adding of the game works.
+The delete of a game works.
+
+The updating I believe I have the right methods in my code, but I dont have the right mapping.
 
 Technologies Used
 Programming Language: Java

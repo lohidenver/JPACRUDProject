@@ -66,7 +66,7 @@ public class NesController {
 		Nes nes = nesService.getGame(id);
 		model.addAttribute("game", nes);
 
-		return "redirect:/home.do";
+		return "update.do";
 	}
 	
 	@GetMapping("update.do")
@@ -76,7 +76,7 @@ public class NesController {
 		Nes nes = nesService.getGame(id);
 		model.addAttribute("game", nes);
 
-		return "create";
+		return "update.do";
 	}
 	
 	

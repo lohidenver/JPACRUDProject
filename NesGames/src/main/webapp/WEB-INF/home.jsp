@@ -74,7 +74,7 @@
 				
 				
 				
-				<c:url var="updateLink" value="updateGame">
+				<c:url var="updateLink" value="createGame">
 				<c:param name="gameId" value="${g.id }"/>
 				</c:url>
 				
