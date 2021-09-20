@@ -9,11 +9,11 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.mysql.cj.xdevapi.SessionFactory;
+
 import com.skilldistillery.jpacrud.entities.Nes;
 
 @Repository //DAOIMPL

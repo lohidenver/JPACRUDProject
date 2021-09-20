@@ -59,7 +59,7 @@ public class NesController {
 	}
 	
 //  Chad
-	@GetMapping("/updateGame")
+	@PostMapping("/updateGame")
 //	public String updateGame(int id, Model model) {
 	public String updateGame(@RequestParam("gameId") int id, Model model) {
 

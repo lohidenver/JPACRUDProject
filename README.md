@@ -10,6 +10,8 @@ The delete of a game works.
 
 The updating I believe I have the right methods in my code, but I dont have the right mapping.
 
+http://52.73.75.43:8080/NesGames/
+
 Technologies Used
 Programming Language: Java
 
