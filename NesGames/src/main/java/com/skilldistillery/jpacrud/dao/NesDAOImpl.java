@@ -151,24 +151,5 @@ public class NesDAOImpl implements NesDAO {
 
 
 
-//	@Override
-//	public Nes update(int id, Nes listing) {
-//		SellerListings dbListing = em.find(SellerListings.class, id);
-//		
-//		dbListing.setName(listing.getName());
-//		dbListing.setType(listing.getType());
-//		dbListing.setCondition(listing.getCondition());
-//		dbListing.setConditionDescription(listing.getConditionDescription());
-//		dbListing.setCardNumber(listing.getCardNumber());
-//		dbListing.setSeries(listing.getSeries());
-//		dbListing.setImageUrl(listing.getImageUrl());
-//		dbListing.setRarity(listing.getRarity());
-//		
-//		return dbListing;
-//		
-//	}
-
-
-
 
 }
