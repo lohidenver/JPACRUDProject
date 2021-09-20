@@ -3,6 +3,8 @@ package com.skilldistillery.jpacrud.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,14 +19,22 @@ public class NesController {
 	@Autowired
 	private NesDAO nesdao;
 
-	@RequestMapping(path = { "/", "home.do" })
+//	@RequestMapping("/list")
+//	public String listGames(Model model) {
+//		
+//		List<Nes> nesGames = nesdao.findAll();
+//		model.addAttribute("game", nesGames);
+//		return "list-games";
+//	}
+	
+	@GetMapping(path = { "/", "home.do" })
 	public String home(Model model) {
 		model.addAttribute("games", nesdao.findAll());
 		return "home";
 	}
 
-	@RequestMapping(path = "getGame.do")
-	public String showFilm(Integer gid, Model model) {
+	@GetMapping(path = "getGame.do")
+	public String showGame(Integer gid, Model model) {
 		Nes nes = nesdao.findById(gid);
 		model.addAttribute("game", nes);
 		return "game/show";

@@ -1,7 +1,6 @@
 package com.skilldistillery.jpacrud.dao;
 
 import java.util.List;
-
 import com.skilldistillery.jpacrud.entities.Nes;
 
 public interface NesDAO {

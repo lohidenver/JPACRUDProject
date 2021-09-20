@@ -41,7 +41,7 @@ public class Nes {
 
 
 
-	//	this.ebay = ebay;
+
 	public Nes(int id, String name, Integer year, String publisher, String style, String numberPlayers,
 			String wikipedia) {
 		super();

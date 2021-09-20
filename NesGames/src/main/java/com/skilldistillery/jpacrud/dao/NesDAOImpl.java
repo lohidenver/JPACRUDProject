@@ -8,16 +8,20 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.springframework.data.repository.query.Param;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import com.mysql.cj.xdevapi.SessionFactory;
 import com.skilldistillery.jpacrud.entities.Nes;
 
-
+@Repository //DAOIMPL
 @Service
 @Transactional
 public class NesDAOImpl implements NesDAO {
-
+	
+	
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPANES");
 	
 	@PersistenceContext
@@ -31,6 +35,11 @@ public class NesDAOImpl implements NesDAO {
 
 	@Override
 	public List<Nes> findAll() {
+		//get hibernate session
+		//EntityManager em = emf.createEntityManager();
+		//create query
+		//execute query and get result list
+		//return results
 		String jpql = "SELECT game FROM Nes game";
 		
 		return em.createQuery(jpql, Nes.class).getResultList();
@@ -39,6 +48,7 @@ public class NesDAOImpl implements NesDAO {
 
 	
 	@Override
+
 	public Nes create(Nes nes) {
 		EntityManager em = emf.createEntityManager();
 		
@@ -49,6 +59,7 @@ public class NesDAOImpl implements NesDAO {
 	}
 
 	@Override
+	@Transactional
 	public Nes update(int id, Nes nes) {
 			
 			    Nes dbNes = em.find(Nes.class, id);
@@ -65,6 +76,7 @@ public class NesDAOImpl implements NesDAO {
 	}
 
 	@Override
+	
 	public boolean destroy(int id) {
 		EntityManager em = emf.createEntityManager();
 		boolean successfullyRemovedNes = false;
@@ -81,6 +93,7 @@ public class NesDAOImpl implements NesDAO {
 	}
 
 	@Override
+	
 	public Nes findByKeyword(String keyword) {
 		String query = "SELECT g FROM Name g WHERE g.name LIKE %:name%";
 	//	List<Nes> searchByTitleLike(@Param("name") String name);
