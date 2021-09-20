@@ -73,7 +73,7 @@ public class NesController {
 		
 		nesService.deleteGame(id);
 		
-		return "home";
+		return "redirect:/home.do";
 	}
 	
 }// End Class

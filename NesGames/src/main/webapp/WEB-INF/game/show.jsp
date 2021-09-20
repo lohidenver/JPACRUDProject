@@ -38,7 +38,7 @@
 		
 		
 		<hr>
-		<a href="/destroy">
+		<a href="/delete">
 			<button style="background-color:red; border-color:black; color:white" >Delete ${game.name}</button>
 		</a> //not working
 
