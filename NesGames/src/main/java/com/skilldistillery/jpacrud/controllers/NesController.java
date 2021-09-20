@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.skilldistillery.jpacrud.dao.NesDAO;
 import com.skilldistillery.jpacrud.entities.Nes;
@@ -48,6 +46,13 @@ public class NesController {
 		Nes nes = new Nes();
 		model.addAttribute("game", nes);
 		return "create";
+	}
+	
+	@PostMapping("/saveGame")
+	public String saveGame(@ModelAttribute("game") Nes nes) {
+	
+		nesService.saveGame(nes);
+	 return "game/show";
 	}
 			
 //	@RequestMapping(path = {"create.do"})

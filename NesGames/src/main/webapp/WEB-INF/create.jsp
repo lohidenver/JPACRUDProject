@@ -14,7 +14,7 @@
 			<h1>Add a game to the database!</h1>
 		</div>
 <div id="container-fluid">
-<h3>Save Game</h3>
+<h3>Game Details</h3>
 
 <form:form action="saveGame" modelAttribute="game" method = "POST">
 	<table>
@@ -50,6 +50,10 @@
 	<td><form:input path="wikipedia"/></td>
 	</tr>
 	
+	<tr>
+	<td><label> </label></td>
+	<td><input type="submit" value="Add Game"/></td>
+	</tr>
 	
 	
 	
@@ -57,11 +61,16 @@
 	</table>
 
 </form:form>
+<div style="clear; both;"></div>
 
+<p>
+<a href="home.do">Home</a>
+
+</p>
 </div>
 
 	</div>
 
-	It's Dangerous to Go Alone!
+
 </body>
 </html>

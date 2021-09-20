@@ -25,5 +25,13 @@ public class NesServiceImpl implements NesService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	@Transactional
+	public void saveGame(Nes nes) {
+		
+		nesdao.saveGame(nes);
+	}
+	
+	
 
 }

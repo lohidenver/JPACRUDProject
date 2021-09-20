@@ -100,12 +100,18 @@ public class NesDAOImpl implements NesDAO {
 		return null ;
 	}
 
+	@Override
+	public Nes saveGame(Nes nes) {
+		em.persist(nes);
+		em.flush();
+		
+		System.out.println(nes);
+		return nes;
+		
+	}
 
-//	@Override
-//	public Nes findByKeyword(String uI) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+
+
 
 
 }

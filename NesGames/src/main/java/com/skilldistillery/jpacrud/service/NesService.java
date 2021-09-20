@@ -8,5 +8,8 @@ public interface NesService {
 
 	public List<Nes> findAll();
 
-	public Nes findById(Integer gid); 
+	public Nes findById(Integer gid);
+
+	public void saveGame(Nes nes); 
+	
 }
