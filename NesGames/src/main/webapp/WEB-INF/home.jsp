@@ -71,7 +71,8 @@
 						<td>${g.id}</td>
 						<td><a href="getGame.do?gid=${g.id}"> ${g.name} </a></td>
 						<td>
-						<a href="${updateLink }"><button>Update</button></a>
+						<a href="${updateLink }"onclick=
+							"if (!(confirm('Are you sure you want to update this game? '))) return false"><button>Update</button></a>
 						
 						<a href="${deleteLink }" onclick=
 							"if (!(confirm('Are you sure you want to delete this game? '))) return false"><button style="background-color:red; border-color:black; color:white" >Delete</button></a>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,40 +17,41 @@
 		<h4>Single or Multiplayer: ${game.numberPlayers}</h4>
 
 		<a href="${game.wikipedia}">
-			<button>${game.name} on Wikipedia</button>
+			<button>${game.name}on Wikipedia</button>
 		</a>//working
 
-	<c:url var="updateLink" value="/updateGame">
-				<c:param name="gameId" value="${g.id }"/>
-				</c:url>
-				
-				<c:url var="deleteLink" value="/destroy">
-				<c:param name="gameId" value="${g.id }"/>
-				</c:url>
-		
-		
-<!--Update  -->
-<input class="" style="width: 150px" type="button" name="gameId" value="Update Game" 
-			onclick="window.location.href='updateGame'; return false;" 
-			 /> //not working
+<table>
+		<c:url var="updateLink" value="updateGame">
+			<c:param name="gameId" value="${game.id }" />
+		</c:url>
 
-		<!-- Change this out!!!! -->
+		<c:url var="deleteLink" value="delete">
+			<c:param name="gameId" value="${game.id }" />
+		</c:url>
+
+		<tr>
+	
 		
+			<td><a href="${updateLink }"
+				onclick="if (!(confirm('Are you sure you want to update this game? '))) return false"><button>Update</button></a>
+
+				<a href="${deleteLink }"
+				onclick="if (!(confirm('Are you sure you want to delete this game? '))) return false"><button
+						style="background-color: red; border-color: black; color: white">Delete</button></a>
+			</td>
+		</tr>
+</table>
 		
-		<hr>
-		<a href="/delete">
-			<button style="background-color:red; border-color:black; color:white" >Delete ${game.name}</button>
-		</a> //not working
 
 
 	</div>
+<hr>
+	<div style=""></div>
 
-<div style="clear; both;"></div>
+	<p>
+		<a href="home.do"><button>Home</button></a>
 
-<p>
-<a href="home.do">Home</a>
-
-</p>
-</div>
+	</p>
+	</div>
 </body>
 </html>
