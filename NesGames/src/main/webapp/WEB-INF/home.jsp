@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/main.css"></link>
+<!-- <link rel="stylesheet" href="css/main.css"></link> -->
 <title>NES Database</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>

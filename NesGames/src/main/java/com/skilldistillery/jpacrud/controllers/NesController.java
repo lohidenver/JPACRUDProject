@@ -37,7 +37,7 @@ public class NesController {
 		return "home";
 	}
 
-	@GetMapping(path = "getGame.do")
+	@GetMapping("/getGame.do")
 	public String showGame(Integer gid, Model model) {
 		Nes nes = nesdao.findById(gid);
 		model.addAttribute("game", nes);
@@ -73,7 +73,7 @@ public class NesController {
 		
 		nesService.deleteGame(id);
 		
-		return "redirect: /";
+		return "home";
 	}
 	
 }// End Class
