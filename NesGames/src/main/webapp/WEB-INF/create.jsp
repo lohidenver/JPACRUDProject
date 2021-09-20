@@ -10,13 +10,14 @@
 </head>
 <body>
 	<div id="wrapper">
-		<div id="header">
+		<div id="header"style="background-color:powderblue;" >
 			<h1>Add a game to the database!</h1>
 		</div>
 <div id="container-fluid">
 <h3>Game Details</h3>
 
 <form:form action="saveGame" modelAttribute="game" method = "POST">
+<form:hidden path="id" />
 	<table>
 	<tbody>
 	

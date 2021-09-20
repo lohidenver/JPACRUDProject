@@ -60,7 +60,9 @@ public class NesDAOImpl implements NesDAO {
 	public Nes create(Nes nes) {
 		EntityManager em = emf.createEntityManager();
 		
-		em.persist(nes);
+		em.merge(nes);
+	//	em.refresh(nes);//maybe comment out
+	//	em.persist(nes);
 		em.flush();
 		
 		return nes;
@@ -120,7 +122,7 @@ public class NesDAOImpl implements NesDAO {
 
 	@Override
 	public Nes getGame(int id) {
-		em.persist(id);
+		em.merge(id);
 		em.flush();
 		
 		Nes nes = em.find(Nes.class, id);
@@ -149,7 +151,7 @@ public class NesDAOImpl implements NesDAO {
 
 
 //	@Override
-//	public SellerListings updateListing(int id, SellerListings listing) {
+//	public Nes update(int id, Nes listing) {
 //		SellerListings dbListing = em.find(SellerListings.class, id);
 //		
 //		dbListing.setName(listing.getName());

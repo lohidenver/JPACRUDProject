@@ -55,9 +55,10 @@ public class NesController {
 	public String saveGame(@ModelAttribute("game") Nes nes) {
 
 		nesService.saveGame(nes);
-		return "game/show";
+		return "redirect:/home.do";
 	}
-
+	
+//  Chad
 	@GetMapping("/updateGame")
 //	public String updateGame(int id, Model model) {
 	public String updateGame(@RequestParam("gameId") int id, Model model) {
@@ -65,8 +66,20 @@ public class NesController {
 		Nes nes = nesService.getGame(id);
 		model.addAttribute("game", nes);
 
+		return "redirect:/home.do";
+	}
+	
+	@GetMapping("update.do")
+//	public String updateGame(int id, Model model) {
+	public String update(@RequestParam("gameId") int id, Model model) {
+
+		Nes nes = nesService.getGame(id);
+		model.addAttribute("game", nes);
+
 		return "create";
 	}
+	
+	
 
 	@GetMapping("/delete")
 	public String deleteGame(@RequestParam("gameId") int id, Model model) {

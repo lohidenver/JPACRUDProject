@@ -14,6 +14,8 @@ public interface NesService {
 
 	public Nes getGame(int id);
 
-	public void deleteGame(int id); 
+	public void deleteGame(int id);
+	
+	public Nes update(int id, Nes nes);
 	
 }

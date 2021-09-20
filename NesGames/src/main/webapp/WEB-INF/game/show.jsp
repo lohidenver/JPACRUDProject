@@ -21,7 +21,7 @@
 		</a>//working
 
 <table>
-		<c:url var="updateLink" value="updateGame">
+		<c:url var="updateLink" value="update">
 			<c:param name="gameId" value="${game.id }" />
 		</c:url>
 

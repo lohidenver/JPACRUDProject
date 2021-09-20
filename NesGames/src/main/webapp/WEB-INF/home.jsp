@@ -11,10 +11,25 @@
 <!-- <link rel="stylesheet" href="css/main.css"></link> -->
 <title>NES Database</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
+ <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+          
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+          
+        tr:nth-child(odd) {
+            background-color: Lightgrey;
+        }
+    </style>
 </head>
 <body>
 
-	<div id="wrapper">
+	<div id="wrapper" style="background-color:powderblue;">
 		<div id="header"></div>
 		<h1>
 			<center>Welcome to your NES Database</center>

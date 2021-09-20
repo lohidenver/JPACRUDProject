@@ -45,6 +45,11 @@ public class NesServiceImpl implements NesService {
 		
 		nesdao.deleteGame(id);
 	}
+	@Override
+	public Nes update(int id, Nes nes) {
+		// TODO Auto-generated method stub
+		return nesdao.update(id, nes);
+	}
 
 	
 	
